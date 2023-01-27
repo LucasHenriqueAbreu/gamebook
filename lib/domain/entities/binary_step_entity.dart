@@ -1,4 +1,4 @@
-import 'package:gamebook/domain/entities/decision_enum.dart';
+import 'package:gamebook/core/enuns/decision_enum.dart';
 import 'package:gamebook/domain/entities/paragraph_entity.dart';
 import 'package:gamebook/domain/entities/step_entity.dart';
 

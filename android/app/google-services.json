@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "737971452811",
+    "project_id": "gamebook-5abe9",
+    "storage_bucket": "gamebook-5abe9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737971452811:android:74c8b67ba2542a58a4cd8e",
+        "android_client_info": {
+          "package_name": "br.com.lucasdev.gamebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737971452811-ei1hffc51q3e44e1g7umj3sti0vnuabh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpZB6jyLPKgdaGSlZreoNOfwf_Dog3Y08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737971452811-ei1hffc51q3e44e1g7umj3sti0vnuabh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "737971452811-fk4flvse1ts51m34t736osoptk63nhfd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.lucasdev.gamebook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
