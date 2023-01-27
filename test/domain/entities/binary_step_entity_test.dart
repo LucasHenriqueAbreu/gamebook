@@ -6,15 +6,21 @@ import 'package:gamebook/domain/entities/step_entity.dart';
 
 void main() {
   group('Test to BinaryStep', () {
-    final paragraphOne =
-        ParagraphEntity(content: 'João é de uma familia pobre');
-    final paragraphTwo = ParagraphEntity(content: 'João foi para cidade');
-    final paragraphTree = ParagraphEntity(content: 'João foi para o bosque');
-    final nextStep = BinaryStepEntity(
-        yes: paragraphTwo, no: paragraphTree, back: paragraphOne);
+    late final ParagraphEntity paragraphOne;
+    late final ParagraphEntity paragraphTwo;
+    late final ParagraphEntity paragraphTree;
+    late final BinaryStepEntity nextStep;
+
+    setUp(() {
+      paragraphOne = ParagraphEntity(content: 'João é de uma familia pobre');
+      paragraphTwo = ParagraphEntity(content: 'João foi para a cidade');
+      paragraphTree = ParagraphEntity(content: 'João foi para o bosque');
+      nextStep = BinaryStepEntity(
+          yesStep: paragraphTwo, noStep: paragraphTree, backStep: paragraphOne);
+    });
 
     test(
-        'Must be possible create a instance of BinaryStepEntity and StepEntity',
+        'Should be possible create a instance of BinaryStepEntity and they be a StepEntity',
         () {
       expect(nextStep, isA<StepEntity>());
       expect(nextStep, isA<BinaryStepEntity>());
@@ -22,20 +28,20 @@ void main() {
 
     test('Must go to next when call method next with yes decision', () {
       nextStep.decision = Decision.yes;
-      final nextParagraph = nextStep.next();
+      final nextParagraph = nextStep.nextStep();
       expect(nextParagraph, isA<ParagraphEntity>());
-      expect(nextParagraph.content, 'João foi para cidade');
+      expect(nextParagraph.content, 'João foi para a cidade');
     });
 
     test('Must go to next when call method next with no decision', () {
       nextStep.decision = Decision.no;
-      final nextParagraph = nextStep.next();
+      final nextParagraph = nextStep.nextStep();
       expect(nextParagraph, isA<ParagraphEntity>());
       expect(nextParagraph.content, 'João foi para o bosque');
     });
 
     test('Must go to back when call method back', () {
-      final backParagraph = nextStep.back();
+      final backParagraph = nextStep.backStep;
       expect(backParagraph, isA<ParagraphEntity>());
       expect(backParagraph.content, 'João é de uma familia pobre');
     });
