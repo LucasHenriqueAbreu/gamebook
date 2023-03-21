@@ -11,7 +11,7 @@ void main() {
     late final ParagraphEntity paragraphTree;
     late final BinaryStepEntity nextStep;
 
-    setUp(() {
+    setUpAll(() {
       paragraphOne = ParagraphEntity(content: 'João é de uma familia pobre');
       paragraphTwo = ParagraphEntity(content: 'João foi para a cidade');
       paragraphTree = ParagraphEntity(content: 'João foi para o bosque');

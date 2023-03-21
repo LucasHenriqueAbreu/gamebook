@@ -10,13 +10,12 @@ class CreateStoryDTO {
 
 class CreateStoryUseCase
     implements UsecaseBase<CreateStoryDTO, Future<StoryEntity>> {
-  final StoryRepository repository;
+  final StoryRepository _repository;
 
-  CreateStoryUseCase(this.repository);
+  CreateStoryUseCase(this._repository);
 
   @override
   Future<StoryEntity> call(CreateStoryDTO input) {
-    // TODO: implement call
-    throw UnimplementedError();
+    return _repository.create(StoryEntity(title: input.title));
   }
 }
