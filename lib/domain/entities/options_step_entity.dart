@@ -10,9 +10,9 @@ class OptionsStepEntity extends StepEntity {
 
   Option get optionSelected {
     if (_optionSelected != null) {
-      // TODO: create custom exceptions;
       return _optionSelected!;
     }
+    // TODO: create custom exceptions;
     throw Exception('No option was selected');
   }
 

@@ -8,7 +8,11 @@ class StoryRepositoryMemory implements StoryRepository {
   Future<StoryEntity> create(StoryEntity story) async {
     final newStory = StoryEntity(title: story.title, id: _storys.length + 1);
     _storys.add(newStory);
-    await Future.delayed(const Duration(milliseconds: 10));
     return newStory;
+  }
+
+  @override
+  Future<StoryEntity> findById(int id) async {
+    return _storys.where((element) => element.id == id).first;
   }
 }

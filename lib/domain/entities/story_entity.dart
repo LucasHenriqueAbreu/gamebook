@@ -10,4 +10,5 @@ class StoryEntity {
         _id = id;
 
   get title => _title;
+  get id => _id;
 }
